@@ -1,17 +1,27 @@
 const express = require("express");
 const cors = require("cors");
-require("dotenv").config();
+const request = require('request')
+const querystring = require('querystring')
 
 const app = express()
 
-app.get("/api", cors(), async (req, res, next) => {
+require("dotenv").config();
+
+const redirect_uri = process.env.REDIRECT_URI
+
+
+app.get("/api", cors(), async (req, res) => {
   res.status(200).send("Hello World!");
 })
 
-const PORT = process.env.PORT 
-
-app.listen(PORT, () => {
-  console.log(`Server running on ${PORT}`)
-})
+app.get('/api/login', cors(), function(req, res) {
+  res.redirect('https://accounts.spotify.com/authorize?' +
+    querystring.stringify({
+      response_type: 'code',
+      client_id: process.env.CLIENT_ID,
+      scope: 'user-read-private user-read-email',
+      redirect_uri
+    }))
+  });
 
 module.exports = app;

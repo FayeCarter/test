@@ -1,10 +1,11 @@
 const request = require("supertest");
-const app = require("../../index");
+const server = require("../../index");
 
 describe("Test the api root path", () => {
-  test("It should response the GET method", () => {
-    return request(app)
-      .get("/api")
-      .expect(200);
+  
+  test("It should respond to the GET method", async () => {
+    const res = await request(server).get("/api");
+    expect(res.status).toBe(200);
   });
+  
 });
