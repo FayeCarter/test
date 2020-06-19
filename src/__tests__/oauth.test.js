@@ -1,5 +1,5 @@
 const request = require("supertest");
-const server = require("../../index");
+const server = require("../index");
 
 describe("Spotify OAuth redirection", () => {
   test("GET /api/login should should redirect", (done) => {
