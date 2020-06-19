@@ -2,7 +2,7 @@
   "name": "spotify-app",
   "version": "1.0.0",
   "description": "",
-  "main": "server.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest --coverage",
     "test:client": "cd client && npm run test"
