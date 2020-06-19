@@ -2,12 +2,16 @@ const express = require("express");
 const cors = require("cors");
 const request = require('request')
 const querystring = require('querystring')
+const path = require('path')
 
 const app = express()
 
 require("dotenv").config();
 
 const redirect_uri = process.env.REDIRECT_URI
+app.use(express.static(path.join(__dirname, 'client/build')))
+
+
 
 app.get("/api", cors(), async (req, res) => {
   res.status(200).send("Hello World!");
@@ -44,6 +48,10 @@ app.get("/api/login/callback", function(req, res) {
     let uri = "http://localhost:3000/user"
     res.redirect(uri + "?access_token=" + access_token)
   })
+})
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname + '/client/build/index.html'))
 })
 
 module.exports = app;
