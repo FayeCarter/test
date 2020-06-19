@@ -1,12 +1,20 @@
 const express = require("express");
 const router = express.Router();
-const request = require("request")
-const querystring = require("querystring")
+const request = require("request");
+const querystring = require("querystring");
+const cookieSession = require("cookie-session");
 const cors = require("cors");
 
 require("dotenv").config();
 
 const redirect_uri = process.env.REDIRECT_URI
+const cookie_secret = process.env.COOKIE_SECRET
+
+router.use(
+  cookieSession({
+    secret: cookie_secret,
+  })
+);
 
 router.get("/api", cors(), async (req, res) => {
   res.status(200).send("Hello World!");
@@ -41,7 +49,8 @@ router.get("/api/login/callback", function(req, res) {
   request.post(authOptions, function(error, response, body) {
     var access_token = body.access_token
     let uri = "http://localhost:3000/user"
-    res.redirect(uri + "?access_token=" + access_token)
+    res.cookie("access_token", access_token)
+    res.redirect(uri)
   })
 })
 
