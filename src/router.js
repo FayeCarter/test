@@ -48,6 +48,7 @@ router.get("/api/login/callback", function(req, res) {
   }
   request.post(authOptions, function(error, response, body) {
     var access_token = body.access_token
+    console.log(body)
     let uri = "http://localhost:3000/user"
     res.cookie("access_token", access_token)
     res.redirect(uri)
