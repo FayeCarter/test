@@ -1,19 +1,23 @@
-import React from "react";
+import React, { useEffect, useState }  from 'react'
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
 import Join from "./components/Join.js";
-import User from "./components/User.js";
+import Dashboard from "./components/Dashboard.js";
 
 const App = () => {
+
+  const [authToken, setAuthToken] = useState("");
+  const [userName, setUserName] = useState("");
+  const [avatar, setAvatar] = useState("");
 
   return (
     <Router>
       <Route path="/" exact component={Join} />
       <Route 
-        path="/user" 
+        path="/dashboard" 
         exact 
         render={({ props }) => (
-          <User {...props} />
+          <Dashboard {...props} />
       )}
       />
     </Router>

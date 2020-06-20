@@ -1,7 +1,7 @@
 import React, { useEffect, useState }  from 'react'
 import cookie from 'react-cookies'
 
-const Join = () => {
+const User = () => {
   const [userName, setUserName] = useState("");
   const [avatar, setAvatar] = useState("");
 
@@ -37,4 +37,4 @@ const Join = () => {
   )
 }
       
-export default Join
+export default User
