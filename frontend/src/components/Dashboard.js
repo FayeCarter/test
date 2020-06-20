@@ -1,13 +1,13 @@
-import React, { useEffect, useState }  from 'react'
+import React from 'react'
 
 import User from "./User.js";
 
-const Dashboard = () => {
+const Dashboard = ({ authToken, setAuthToken }) => {
 
   return (
     <div className="Dashboard">
       <h1>Dash</h1>
-      <User />
+      { authToken ? <User authToken={authToken}/> : null }
     </div>
   )
 }

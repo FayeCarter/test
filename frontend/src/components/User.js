@@ -1,18 +1,17 @@
 import React, { useEffect, useState }  from 'react'
-import cookie from 'react-cookies'
 
-const User = () => {
+const User = ({authToken}) => {
   const [userName, setUserName] = useState("");
   const [avatar, setAvatar] = useState("");
 
-  const getUserData = async (token) => {
+  const getUserData = async () => {
     try {
       const response = await fetch("https://api.spotify.com/v1/me", {
         method: "GET",
         headers: {
           "Accept": "application/json",
           "Content-Type": "application/json",
-          "Authorization": `Bearer ${token}`
+          "Authorization": `Bearer ${authToken}`
         }
       });
       const parseData = await response.json();
@@ -24,8 +23,7 @@ const User = () => {
   };
 
   useEffect( () => {
-    const token = cookie.load('access_token')
-    getUserData(token)
+    getUserData()
   }, [])
 
   return (

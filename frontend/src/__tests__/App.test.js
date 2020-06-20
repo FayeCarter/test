@@ -12,7 +12,7 @@ describe("Application routing Testing", () => {
     wrapper = mount(<App />);
   });
 
-  test("rRenders join route", () => {
+  test("Renders join route", () => {
     expect(wrapper.html()).toContain('Join')
   });
 
