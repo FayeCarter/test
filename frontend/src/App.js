@@ -6,20 +6,10 @@ import Dashboard from "./components/Dashboard.js";
 
 const App = () => {
 
-  const [authToken, setAuthToken] = useState("");
-  const [userName, setUserName] = useState("");
-  const [avatar, setAvatar] = useState("");
-
   return (
     <Router>
       <Route path="/" exact component={Join} />
-      <Route 
-        path="/dashboard" 
-        exact 
-        render={({ props }) => (
-          <Dashboard {...props} />
-      )}
-      />
+      <Route path="/dashboard" exact component={Dashboard} />
     </Router>
   );
 }

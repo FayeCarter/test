@@ -1,12 +1,12 @@
 import React from "react";
 import { shallow } from "enzyme";
-import App from "../App.js";
+import Join from "../components/Join.js";
 
 describe("Application Testing", () => {
   let wrapper;
 
   beforeEach( () => {
-    wrapper = shallow(<App />);
+    wrapper = shallow(<Join />);
   });
 
   test("renders header with `Spotify App` text", () => {

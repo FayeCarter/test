@@ -29,9 +29,9 @@ const User = () => {
   }, [])
 
   return (
-    <div className="Join">
+    <div className="User">
       <h1>User</h1>
-      <p>{userName}</p>
+      <p className="username">{userName}</p>
       <img src={avatar}/>
     </div>
   )
