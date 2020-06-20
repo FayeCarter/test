@@ -2,7 +2,7 @@ import React from "react";
 import { shallow } from "enzyme";
 import Join from "../components/Join.js";
 
-describe("Application Testing", () => {
+describe("Join page Testing", () => {
   let wrapper;
 
   beforeEach( () => {
