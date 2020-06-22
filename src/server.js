@@ -6,10 +6,10 @@ const path = require('path')
 const app = express()
 
 app.use(router);
-app.use(express.static(path.join(__dirname, 'client/build')))
+app.use(express.static(path.join(__dirname, 'frontend/build')))
 
 app.get('*', cors(), (req, res) => {
-  res.sendFile(path.join(__dirname + '/client/build/index.html'))
+  res.sendFile(path.join(__dirname + '/frontend/build/index.html'))
 })
 
 module.exports = app;
