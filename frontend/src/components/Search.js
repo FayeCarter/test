@@ -1,5 +1,5 @@
 import React, { useState }  from 'react'
-
+import "./Search.css"
 
 const Search = ({authToken, setTrackList}) => {
   const [input, setInput] = useState('')
@@ -37,7 +37,7 @@ const Search = ({authToken, setTrackList}) => {
       <form className="form" id="searchBar">
         <input
           type="text"
-          className="input"
+          className="search-bar"
           placeholder="Search"
           value={input}
           onChange={(e) => setInput(e.target.value)}
