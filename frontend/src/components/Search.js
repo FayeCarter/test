@@ -42,9 +42,6 @@ const Search = ({authToken, setTrackList}) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button className="searchButton" onClick={searchTracks}>
-          Search
-        </button>
       </form>      
     </div>
   )

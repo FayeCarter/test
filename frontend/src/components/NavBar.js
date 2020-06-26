@@ -7,8 +7,8 @@ const NavBar = ({ authToken, trackList, setTrackList }) => {
 
   return (
     <div className="NavBar">
-      { authToken ? <User authToken={ authToken } /> : null }
       { authToken ? <Search authToken={ authToken } trackList={ trackList } setTrackList={ setTrackList } /> : null }
+      { authToken ? <User authToken={ authToken } /> : null }
     </div>
   )
 }
