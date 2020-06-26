@@ -28,9 +28,11 @@ const User = ({authToken}) => {
   }, [])
 
   return (
-    <div className="User">
-      <p className="username">{userName}</p>
-      <img className="avatar" src={avatar}/>
+    <div >
+      <ul className="User">
+        <li className="username">{userName}</li>
+        <li><img className="avatar" src={avatar}/></li>
+      </ul>
     </div>
   )
 }
