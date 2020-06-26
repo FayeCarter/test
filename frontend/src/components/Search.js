@@ -34,13 +34,18 @@ const Search = ({authToken, setTrackList}) => {
 
   return (
     <div className="Search">
-      <form className="form" id="searchBar">
+      <form 
+        className="form" 
+        id="searchBar"
+        onSubmit= {searchTracks}
+      >
         <input
           type="text"
           className="search-bar"
           placeholder="Search"
           value={input}
           onChange={(e) => setInput(e.target.value)}
+
         />
       </form>      
     </div>

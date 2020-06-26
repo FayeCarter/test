@@ -5,6 +5,8 @@ import cookie from 'react-cookies'
 import Join from "./components/Join.js";
 import Dashboard from "./components/Dashboard.js";
 
+import "./App.css"
+
 const App = () => {
 
   const [authToken, setAuthToken] = useState("");
