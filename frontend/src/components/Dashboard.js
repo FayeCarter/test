@@ -2,7 +2,6 @@ import React, { useState }  from 'react'
 import "./Dashboard.css"
 
 import NavBar from "./NavBar.js";
-import Search from "./Search.js";
 import Search_Results from './Search_Results';
 
 const Dashboard = ({ authToken }) => {
@@ -11,8 +10,7 @@ const Dashboard = ({ authToken }) => {
 
   return (
     <div className="Dashboard">
-      { authToken ? <NavBar authToken={ authToken } /> : null }
-      { authToken ? <Search authToken={ authToken } trackList={ trackList } setTrackList={ setTrackList } /> : null }
+      { authToken ? <NavBar authToken={ authToken } trackList={ trackList } setTrackList={ setTrackList } /> : null }
       { trackList ? <Search_Results trackList={ trackList } /> : null }
     </div>
   )
