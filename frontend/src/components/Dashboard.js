@@ -1,4 +1,5 @@
 import React, { useState }  from 'react'
+import "./Dashboard.css"
 
 import User from "./User.js";
 import Search from "./Search.js";

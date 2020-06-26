@@ -1,4 +1,5 @@
 import React, { useEffect, useState }  from 'react'
+import "./User.css"
 
 const User = ({authToken}) => {
   const [userName, setUserName] = useState("");
@@ -30,7 +31,7 @@ const User = ({authToken}) => {
     <div className="User">
       <h1>User</h1>
       <p className="username">{userName}</p>
-      <img src={avatar}/>
+      <img className="avatar" src={avatar}/>
     </div>
   )
 }
