@@ -5,4 +5,8 @@
   margin: 0;
 }
 
+.Dashboard {
+  background-color: rgb(19, 19, 19);
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');

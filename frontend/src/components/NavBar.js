@@ -1,6 +1,7 @@
 import React, { useState }  from 'react'
 import User from "./User.js";
 import Search from "./Search.js";
+import "./NavBar.css"
 
 const NavBar = ({ authToken, trackList, setTrackList }) => {
 

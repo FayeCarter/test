@@ -1,6 +1,5 @@
 .track-list {
-  background-color: rgb(255, 245, 240);
-  display: flex;
+    display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
