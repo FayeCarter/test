@@ -6,14 +6,14 @@ import Search_Results from './Search_Results';
 
 const Dashboard = ({ authToken }) => {
 
-  const [songList, setSongList] = useState([])
+  const [trackList, setTrackList] = useState([])
 
   return (
     <div className="Dashboard">
       <h1>Dash</h1>
       { authToken ? <User authToken={ authToken } /> : null }
-      { authToken ? <Search authToken={ authToken } songList={ songList } setSongList={ setSongList } /> : null }
-      { songList ? <Search_Results songList={ songList } /> : null }
+      { authToken ? <Search authToken={ authToken } trackList={ trackList } setTrackList={ setTrackList } /> : null }
+      { trackList ? <Search_Results trackList={ trackList } /> : null }
     </div>
   )
 }

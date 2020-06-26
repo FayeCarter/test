@@ -1,13 +1,13 @@
 import React, { useState }  from 'react'
 
 
-const Search = ({authToken, setSongList}) => {
+const Search = ({authToken, setTrackList}) => {
   const [input, setInput] = useState('')
   
-  const searchSongs = async (e) => {
+  const searchTracks = async (e) => {
     e.preventDefault()
     setInput("")
-    setSongList([])
+    setTrackList([])
     try {
       const response = await fetch(`https://api.spotify.com/v1/search?q=${input}&type=track`, {
         method: "GET",
@@ -20,12 +20,12 @@ const Search = ({authToken, setSongList}) => {
       const parseData = await response.json();   
       const result = parseData.tracks.items
 
-      result.forEach(song => {
+      result.forEach(track => {
         let artists = [];
-        song.artists.forEach(artist => {
+        track.artists.forEach(artist => {
           artists.push(artist.name)
         })
-        setSongList(songList => [ ...songList, {["name"]: song.name, ["url"]: song.album.images[0].url, ["uri"]: song.uri, ["artist"]: artists } ]);
+        setTrackList(trackList => [ ...trackList, {["name"]: track.name, ["url"]: track.album.images[0].url, ["uri"]: track.uri, ["artist"]: artists } ]);
       })
     } catch (err) {
       console.error(err.message);
@@ -42,7 +42,7 @@ const Search = ({authToken, setSongList}) => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
         />
-        <button className="searchButton" onClick={searchSongs}>
+        <button className="searchButton" onClick={searchTracks}>
           Search
         </button>
       </form>      

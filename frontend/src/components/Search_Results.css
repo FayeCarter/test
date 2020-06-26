@@ -1,0 +1,59 @@
+.track-list {
+  background-color: rgb(255, 245, 240);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: rgb(244, 244, 244);
+  font-family: 'Varela Round', sans-serif;
+}
+
+.track {
+  background-color: rgb(40, 40, 40);
+  width: calc(100% / 7);
+  border-radius: 10px;
+  align-items: center;
+  padding: 20px;
+  margin: 6px;
+}
+
+.track-art {
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.track-details {
+  padding-left: 6px;
+  color: white;
+}
+
+.track-name {
+  font-weight: bold;
+}
+
+.artists-list {
+  overflow: hidden;
+  max-height: 80px;
+}
+.artists-list:hover  .artist-container {
+  transform: translateY(-500%);
+}
+
+.artist-container {
+  overflow: hidden;
+  transition: transform 3s linear;
+  position: relative;
+}
+
+.artist {
+  padding: 5px;
+  color: rgb(225, 225, 225);
+  position: sticky;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-wrap: break-word;
+  max-height: 1.8em;
+  line-height: 1.8em;
+}
+@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
