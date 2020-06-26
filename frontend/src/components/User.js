@@ -29,7 +29,6 @@ const User = ({authToken}) => {
 
   return (
     <div className="User">
-      <h1>User</h1>
       <p className="username">{userName}</p>
       <img className="avatar" src={avatar}/>
     </div>

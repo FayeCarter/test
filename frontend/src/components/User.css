@@ -1,3 +1,7 @@
+.User {
+  background-color: rgb(7, 7, 7);
+}
+
 .avatar {
   height: 60px;
   border-radius: 50%;

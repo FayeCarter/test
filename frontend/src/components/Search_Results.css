@@ -3,8 +3,6 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  color: rgb(244, 244, 244);
-  font-family: 'Varela Round', sans-serif;
 }
 
 .track {
@@ -56,4 +54,3 @@
   max-height: 1.8em;
   line-height: 1.8em;
 }
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');

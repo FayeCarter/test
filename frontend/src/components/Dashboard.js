@@ -11,7 +11,6 @@ const Dashboard = ({ authToken }) => {
 
   return (
     <div className="Dashboard">
-      <h1>Dash</h1>
       { authToken ? <User authToken={ authToken } /> : null }
       { authToken ? <Search authToken={ authToken } trackList={ trackList } setTrackList={ setTrackList } /> : null }
       { trackList ? <Search_Results trackList={ trackList } /> : null }
